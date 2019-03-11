@@ -6,7 +6,30 @@
 </head>
 <body>
 <h1>Result</h1>
-<p th:text="'name: ' + ${person.name}" />
-<a href="/search">Search again</a>
+<h2>Search Results</h2>
+<table align="centre">
+    <thead>
+    <tr>
+        <th>Job History</th>
+        <th>Company</th>
+        <th>Email</th>
+        <th>City</th>
+        <th>Name</th>
+        <th>Country</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="person : ${results}" align="centre">
+        <td th:text="${person.getJob_history()}">Text ...</td>
+        <td th:text="${person.company}">Text ...</td>
+        <td th:text="${person.email}">Text ...</td>
+        <td th:text="${person.city}">Text ...</td>
+        <td th:text="${person.name}">Text...</td>
+        <td th:text="${person.country}">Text...</td>
+    </tr>
+    </tbody>
+</table>
+<p>&nbsp;</p>
+<a href="/form">Search again</a>
 </body>
 </html>
