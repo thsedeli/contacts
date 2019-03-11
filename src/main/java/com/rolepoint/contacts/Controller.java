@@ -1082,8 +1082,7 @@ public class Controller {
     }
 
     @RequestMapping("/search")
-    public String search(String s, Model model) throws IOException {
-        System.out.println(s);
+    public String search(Model model) throws IOException {
         model.addAttribute("results", loadContacts());
         return "result";
     }
